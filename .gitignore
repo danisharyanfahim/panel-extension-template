@@ -1,2 +1,16 @@
-node_modules
-test-results
+# Node modules
+node_modules/
+
+# Playwright test artifacts
+playwright-report/
+test-results/
+
+# Lock files (if you use pnpm or yarn instead of npm)
+# pnpm-lock.yaml
+# yarn.lock
+
+# OS‑generated files
+.DS_Store
+
+# Chrome extension zips, build artifacts, etc.
+*.zip
