@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Test Extension",
+  "version": "1.0.0",
+  "description": "Test Extension",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "64": "icons/icon-64.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Test Extension Popup"
+  },
+
+  "permissions": ["storage", "activeTab", "tabs", "downloads", "scripting"],
+
+  "host_permissions": ["<all_urls>"],
+
+  "background": {
+    "service_worker": "js/service-workers/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["libs/jquery.min.js", "js/content/app.js"],
+      "css": ["styles/panel.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
